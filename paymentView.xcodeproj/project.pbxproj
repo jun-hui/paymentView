@@ -21,6 +21,7 @@
 		6DFB17BF1E70FB370065795D /* PasswordInputBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFB17BE1E70FB370065795D /* PasswordInputBoxView.m */; };
 		6DFB17C21E70FB710065795D /* BaseTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFB17C11E70FB710065795D /* BaseTextField.m */; };
 		6DFB17C61E70FCBA0065795D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFB17C51E70FCBA0065795D /* UIView+Extension.m */; };
+		6DFB17CB1E712B350065795D /* 支付页面演示.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6DFB17CA1E712B350065795D /* 支付页面演示.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		6DFB17C31E70FBA50065795D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6DFB17C41E70FCB90065795D /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		6DFB17C51E70FCBA0065795D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		6DFB17CA1E712B350065795D /* 支付页面演示.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "支付页面演示.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		6DFB17C71E70FEA70065795D /* image */ = {
 			isa = PBXGroup;
 			children = (
+				6DFB17CA1E712B350065795D /* 支付页面演示.gif */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				6DFB17921E70F9CE0065795D /* LaunchScreen.storyboard in Resources */,
 				6DFB178F1E70F9CE0065795D /* Assets.xcassets in Resources */,
 				6DFB178D1E70F9CE0065795D /* Main.storyboard in Resources */,
+				6DFB17CB1E712B350065795D /* 支付页面演示.gif in Resources */,
 				6DFB17BB1E70FB160065795D /* PaymentTypeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +574,7 @@
 				6DFB17AE1E70F9CE0065795D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DFB17AF1E70F9CE0065795D /* Build configuration list for PBXNativeTarget "paymentViewTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +583,7 @@
 				6DFB17B11E70F9CE0065795D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DFB17B21E70F9CE0065795D /* Build configuration list for PBXNativeTarget "paymentViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +592,7 @@
 				6DFB17B41E70F9CE0065795D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
