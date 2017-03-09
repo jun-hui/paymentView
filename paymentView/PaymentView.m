@@ -61,6 +61,7 @@
         _inputPasswView = [[[NSBundle mainBundle] loadNibNamed:paymentTypeViewID owner:nil options:nil] objectAtIndex:2];
         _inputPasswView.frame = CGRectMake(ScreenWidth, ScreenHeight - _inputPasswView.height, ScreenWidth, _inputPasswView.height);
         _inputPasswView.paymentTypeDelegate = self;
+        _inputPasswView.passwordBoxView.isSecure = YES;
     }
     return _inputPasswView;
 }
