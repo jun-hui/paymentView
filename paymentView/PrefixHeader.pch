@@ -1,0 +1,37 @@
+//
+//  PrefixHeader.pch
+//  paymentView
+//
+//  Created by 小王 on 2017/3/8.
+//  Copyright © 2017年 小王. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIView+Extension.h"
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define ScreenWindow  [UIApplication sharedApplication].keyWindow
+#define ScreenCenter CGPointMake(ScreenWidth/2, ScreenHeight/2)
+
+#define SCALEWidth [UIScreen mainScreen].bounds.size.width/320.0
+
+#define UIColorFromRGB(rgbValue)[UIColor colorWithRed:((CGFloat)((rgbValue & 0xFF0000) >>16))/255.0 green:((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0 blue:((CGFloat)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define CGColorFromRGB(rgbValue)[UIColor colorWithRed:((CGFloat)((rgbValue & 0xFF0000) >>16))/255.0 green:((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0 blue:((CGFloat)(rgbValue & 0xFF))/255.0 alpha:1.0].CGColor
+
+#define barColor UIColorFromRGB(0xFF4E00)
+#define alphaBarColor(apha) [UIColor colorWithRed:((CGFloat)((0xFF4E00 & 0xFF0000) >>16))/255.0 green:((CGFloat)((0xFF4E00 & 0xFF00) >> 8))/255.0 blue:((CGFloat)(0xFF4E00 & 0xFF))/255.0 alpha:(CGFloat)apha]
+#define whiteColor [UIColor whiteColor]
+#define lightGrayColor [UIColor lightGrayColor]
+#define groupColor [UIColor groupTableViewBackgroundColor]
+#define clearColor [UIColor clearColor]
+#define cellSeparatorColor [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1]
+
+#define globalFont [UIFont systemFontOfSize:14]
+
+#endif /* PrefixHeader_pch */
