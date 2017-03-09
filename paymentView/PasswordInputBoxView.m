@@ -106,6 +106,25 @@ static CGFloat superViewLeading = 10;//上下左右边距
     [super awakeFromNib];
 }
 
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = whiteColor;
+        self.boxType = PasswordInputBoxCellTogether;
+        self.cellNum = 6;//密码位数
+        self.Spacing = 0;//每个格子间距
+        self.cellLayerColor = clearColor;
+        self.cellBorderColor = cellSeparatorColor;
+        self.cellBorderWidth = 0.5;
+        self.cellCornerRadius = 3.0;
+        _textFieldsArray = [NSMutableArray arrayWithCapacity:0];
+        [self setCells];
+        _isDelete = NO;
+    }
+    return self;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame boxType:(PasswordInputBoxType)boxType
 {
     self = [super initWithFrame:frame];
