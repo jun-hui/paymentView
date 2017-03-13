@@ -8,11 +8,8 @@
 
 #import "PaymentView.h"
 
-@interface PaymentView()<PaymentTypeViewDelegate>
+@interface PaymentView()<PaymentTypeViewDelegate,PasswordInputBoxViewDelegate,ProgressViewDelegate>
 
-@property (nonatomic, strong) PaymentTypeView *payDetailView;
-@property (nonatomic, strong) PaymentTypeView *typeView;
-@property (nonatomic, strong) PaymentTypeView *inputPasswView;
 @property (nonatomic, assign) PaymentType paymentType;
 @property (nonatomic, copy) NSString *orderInfo;
 @property (nonatomic, copy) NSString *money;
@@ -61,6 +58,7 @@
         _inputPasswView = [[[NSBundle mainBundle] loadNibNamed:paymentTypeViewID owner:nil options:nil] objectAtIndex:2];
         _inputPasswView.frame = CGRectMake(ScreenWidth, ScreenHeight - _inputPasswView.height, ScreenWidth, _inputPasswView.height);
         _inputPasswView.paymentTypeDelegate = self;
+        _inputPasswView.passwordBoxView.passwordInputDelegate = self;
         _inputPasswView.passwordBoxView.isSecure = YES;
     }
     return _inputPasswView;
@@ -125,6 +123,38 @@
     }];
 }
 
+-(void)passwordInputFinished:(NSString *)passwordString
+{
+    if ([self.inputPasswView.passwordBoxView.passwordInputDelegate respondsToSelector:@selector(passwordInputFinished:)]) {
+        
+        NSArray *colors = @[UIColorFromRGB(0x00C8FF)];
+        
+        ProgressView *progressView = [[ProgressView alloc] initWithFrame:CGRectMake(0, 0, 80, 80) andLineWidth:3.0 andLineColor:colors];
+        progressView.center = self.inputPasswView.passwordBoxView.center;
+        progressView.progressDelegate = self;
+        progressView.alpha = 0;
+        [self.inputPasswView addSubview:progressView];
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            self.inputPasswView.passwordBoxView.alpha = 0;
+            progressView.alpha = 1;
+            
+        } completion:^(BOOL finished) {
+            
+            [self.paymentDelegate passwordInputFinished:passwordString];
+        }];
+    }
+}
+
+-(void)animationFinished:(ProgressView *)view
+{
+    [view removeFromSuperview];
+    view = nil;
+    
+    [self hidden];
+}
+
 -(void)cancelPay
 {
     self.alpha = 1;
@@ -145,6 +175,11 @@
     [_typeView removeFromSuperview];
     [_inputPasswView removeFromSuperview];
     [self removeFromSuperview];
+}
+
+-(void)hidden
+{
+    [self cancelPay];
 }
 
 

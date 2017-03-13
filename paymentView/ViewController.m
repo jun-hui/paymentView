@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "PaymentView.h"
+#import "ProgressView.h"
 
-@interface ViewController ()
+@interface ViewController ()<PaymentViewDelegate>
+
+@property (nonatomic, strong) PaymentView *paymentView;
 
 @end
 
@@ -42,9 +45,16 @@
 -(void)showPaymentView
 {
     // 创建支付视图
-    PaymentView *paymentView = [[PaymentView alloc] initWithOrderInfo:@"商品名称" money:@"¥ 99.00" paymentType:PaymentTypeAlipay];
-    [paymentView showPayment];
+    _paymentView = [[PaymentView alloc] initWithOrderInfo:@"商品名称" money:@"¥ 99.00" paymentType:PaymentTypeAlipay];
+    _paymentView.paymentDelegate = self;
+    [_paymentView showPayment];
 }
+
+-(void)passwordInputFinished:(NSString *)passwordString
+{
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning {

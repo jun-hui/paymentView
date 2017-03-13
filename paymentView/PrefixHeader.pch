@@ -34,4 +34,9 @@
 
 #define globalFont [UIFont systemFontOfSize:14]
 
+
+// 圆上的点（circleCenter 圆心，radius 半径，angle 角度）
+#define pointOnCircle(circleCenter,Radius,angle) CGPointMake(((CGPoint)circleCenter).x + ((CGFloat)Radius) * cosf((CGFloat)angle * (M_PI/180)), ((CGPoint)circleCenter).y - ((CGFloat)Radius) * sinf((CGFloat)angle * (M_PI/180)))
+
+
 #endif /* PrefixHeader_pch */

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PasswordInputBoxView.h"
+#import "ProgressView.h"
 
 static NSString *paymentTypeViewID = @"PaymentTypeView";
 #define payTypeNameArray @[@"支付宝支付",@"微信支付",@"银联支付",@"苹果支付"]
@@ -37,6 +38,7 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIButton *goInputButton;
 @property (weak, nonatomic) IBOutlet UITableView *payTypeTable;
 @property (weak, nonatomic) IBOutlet PasswordInputBoxView *passwordBoxView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *boxViewWidth;
 @property (weak, nonatomic) id<PaymentTypeViewDelegate> paymentTypeDelegate;
 
 -(void)setPaymentTypes;

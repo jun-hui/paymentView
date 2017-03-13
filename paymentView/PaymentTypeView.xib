@@ -43,7 +43,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-k7-1lj">
                     <rect key="frame" x="20" y="300" width="280" height="40"/>
-                    <color key="backgroundColor" red="0.12549019607843137" green="0.66666666666666663" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.78431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Dh6-H5-smy"/>
                     </constraints>
@@ -274,6 +274,7 @@
                     <rect key="frame" x="20" y="61" width="280" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="280" id="Nnh-GC-5ZC"/>
                         <constraint firstAttribute="height" constant="60" id="gGs-E7-ylr"/>
                     </constraints>
                 </view>
@@ -287,13 +288,13 @@
                 <constraint firstItem="5An-1Z-5j9" firstAttribute="top" secondItem="mV1-it-Cpo" secondAttribute="bottom" constant="15" id="Dt3-Pp-VbW"/>
                 <constraint firstItem="uoz-VF-nvB" firstAttribute="leading" secondItem="PFr-Yx-7hh" secondAttribute="leading" constant="15" id="PU6-sN-WLj"/>
                 <constraint firstItem="mV1-it-Cpo" firstAttribute="top" secondItem="rtz-UU-T2U" secondAttribute="bottom" constant="10" id="Q54-Qh-hFX"/>
-                <constraint firstItem="5An-1Z-5j9" firstAttribute="leading" secondItem="PFr-Yx-7hh" secondAttribute="leading" constant="20" id="ln3-v8-yDf"/>
+                <constraint firstItem="5An-1Z-5j9" firstAttribute="centerX" secondItem="PFr-Yx-7hh" secondAttribute="centerX" id="b91-j7-EtS"/>
                 <constraint firstItem="rtz-UU-T2U" firstAttribute="top" secondItem="PFr-Yx-7hh" secondAttribute="top" constant="10" id="qEK-9o-r52"/>
                 <constraint firstItem="mV1-it-Cpo" firstAttribute="top" secondItem="PFr-Yx-7hh" secondAttribute="top" constant="45" id="qpP-b6-KLJ"/>
-                <constraint firstAttribute="trailing" secondItem="5An-1Z-5j9" secondAttribute="trailing" constant="20" id="zsu-vV-ti3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="boxViewWidth" destination="Nnh-GC-5ZC" id="iEH-67-9mB"/>
                 <outlet property="passwordBoxView" destination="5An-1Z-5j9" id="LFF-Qx-nM9"/>
             </connections>
             <point key="canvasLocation" x="864" y="-88"/>
